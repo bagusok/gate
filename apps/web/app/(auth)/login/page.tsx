@@ -4,7 +4,7 @@ import { signIn } from "@gate/auth/client";
 import { AlertCircle, Loader2 } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
 	Card,
@@ -24,7 +24,7 @@ export default function LoginPage() {
 	const [error, setError] = useState("");
 	const [loading, setLoading] = useState(false);
 
-	const handleSubmit = async (e: React.FormEvent) => {
+	const handleSubmit = async (e: FormEvent) => {
 		e.preventDefault();
 		setError("");
 		setLoading(true);
@@ -34,7 +34,7 @@ export default function LoginPage() {
 			if (result.error) {
 				setError(result.error.message || "Login failed");
 			} else {
-				router.push("/dashboard");
+				router.replace("/dashboard");
 			}
 		} catch {
 			setError("An error occurred during login");

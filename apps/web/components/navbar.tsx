@@ -23,7 +23,7 @@ export function Navbar({ isLoggedIn }: NavbarProps) {
 		<header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur-md">
 			<div className="container mx-auto flex h-16 items-center justify-between px-4">
 				<Link href="/" className="flex items-center gap-2.5">
-					<div className="h-9 w-9 rounded-xl bg-gradient-to-br from-primary to-primary/70 text-primary-foreground flex items-center justify-center text-lg font-bold shadow-lg shadow-primary/20">
+					<div className="h-9 w-9 rounded-xl bg-linear-to-br from-primary to-primary/70 text-primary-foreground flex items-center justify-center text-lg font-bold shadow-lg shadow-primary/20">
 						A
 					</div>
 					<span className="text-lg font-semibold">API Gateway</span>
@@ -67,11 +67,11 @@ export function Navbar({ isLoggedIn }: NavbarProps) {
 							<span className="sr-only">Toggle menu</span>
 						</Button>
 					</SheetTrigger>
-					<SheetContent side="right" className="w-[300px] sm:w-[340px] p-0">
+					<SheetContent side="right" className="w-75 sm:w-85 p-0">
 						<SheetHeader className="border-b px-6 py-4">
 							<SheetTitle asChild>
 								<Link href="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
-									<div className="h-9 w-9 rounded-xl bg-gradient-to-br from-primary to-primary/70 text-primary-foreground flex items-center justify-center text-lg font-bold shadow-lg shadow-primary/20">
+									<div className="h-9 w-9 rounded-xl bg-linear-to-br from-primary to-primary/70 text-primary-foreground flex items-center justify-center text-lg font-bold shadow-lg shadow-primary/20">
 										A
 									</div>
 									<span className="text-lg font-semibold">API Gateway</span>

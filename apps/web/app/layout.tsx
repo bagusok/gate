@@ -7,6 +7,9 @@ import { Providers } from "@/lib/providers";
 export const metadata: Metadata = {
 	title: "API Portal - Paid Endpoint",
 	description: "Manage your API keys and monitor usage",
+	other: {
+		google: "notranslate",
+	},
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

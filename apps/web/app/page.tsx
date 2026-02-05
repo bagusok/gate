@@ -66,8 +66,8 @@ export default async function Home() {
 
 			<main>
 				<section className="relative overflow-hidden">
-					<div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-primary/10" />
-					<div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent" />
+					<div className="absolute inset-0 bg-linear-to-brrom-primary/5 via-background to-primary/10" />
+					<div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent" />
 					<div className="container relative mx-auto px-4 py-24 sm:py-32 lg:py-40">
 						<div className="max-w-3xl">
 							<Badge variant="secondary" className="mb-6 px-4 py-1.5 text-sm">
@@ -191,7 +191,7 @@ export default async function Home() {
 										key={service.id}
 										className="group relative overflow-hidden transition-all hover:shadow-lg hover:shadow-primary/5 hover:border-primary/30"
 									>
-										<div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+										<div className="absolute inset-0 bg-linear-to-br from-primary/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
 										<CardHeader className="relative pb-4">
 											<div className="flex items-start justify-between">
 												<div className="flex items-center gap-3">
@@ -218,7 +218,7 @@ export default async function Home() {
 											</div>
 										</CardHeader>
 										<CardContent className="relative pt-0">
-											<CardDescription className="line-clamp-2 min-h-[40px]">
+											<CardDescription className="line-clamp-2 min-h-10">
 												{service.description || "No description available"}
 											</CardDescription>
 										</CardContent>
@@ -320,8 +320,8 @@ export default async function Home() {
 
 				<section className="py-20 sm:py-24">
 					<div className="container mx-auto px-4">
-						<div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary to-primary/80 px-6 py-16 text-center text-primary-foreground sm:px-12 sm:py-20">
-							<div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent" />
+						<div className="relative overflow-hidden rounded-2xl bg-linear-to-br from-primary to-primary/80 px-6 py-16 text-center text-primary-foreground sm:px-12 sm:py-20">
+							<div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent" />
 							<div className="relative">
 								<h2 className="text-3xl font-bold sm:text-4xl">Ready to Get Started?</h2>
 								<p className="mx-auto mt-4 max-w-xl text-primary-foreground/80">
@@ -365,7 +365,7 @@ export default async function Home() {
 				<div className="container mx-auto px-4">
 					<div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
 						<div className="flex items-center gap-2.5">
-							<div className="h-8 w-8 rounded-lg bg-gradient-to-br from-primary to-primary/70 text-primary-foreground flex items-center justify-center font-bold shadow-lg shadow-primary/20">
+							<div className="h-8 w-8 rounded-lg bg-linear-to-br from-primary to-primary/70 text-primary-foreground flex items-center justify-center font-bold shadow-lg shadow-primary/20">
 								A
 							</div>
 							<span className="font-semibold">API Gateway</span>

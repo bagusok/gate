@@ -9,6 +9,7 @@
 		"dev": "turbo run dev",
 		"dev:web": "turbo run dev --filter=@gate/web",
 		"dev:api": "turbo run dev --filter=@gate/api",
+		"start": "turbo run start",
 		"build": "turbo run build",
 		"db:generate": "turbo run db:generate --filter=@gate/database",
 		"db:migrate": "turbo run db:migrate --filter=@gate/database",

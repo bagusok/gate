@@ -10,7 +10,7 @@ export default async function AuthLayout({ children }: { children: React.ReactNo
 	}
 
 	return (
-		<div className="min-h-screen flex flex-col bg-gradient-to-b from-background to-muted/30">
+		<div className="min-h-screen flex flex-col bg-linear-to-b from-background to-muted/30">
 			<header className="flex h-16 items-center px-4 lg:px-6">
 				<Link href="/" className="flex items-center gap-2 font-semibold">
 					<div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground font-bold">
