@@ -76,7 +76,7 @@
 │                                                                  │
 │  ┌──────────────────────────────────────────────────────────────┤
 │  │                    packages/                                  │
-│  │  ├── @repo/database    # Drizzle schema & client             │
+│  │  ├── @gate/database    # Drizzle schema & client             │
 │  │  ├── @repo/types       # Shared TypeScript types             │
 │  │  ├── @repo/auth        # Better Auth configuration           │
 │  │  └── @repo/ui          # Shared shadcn components (opsional) │
@@ -970,7 +970,7 @@ export type App = typeof app
 // packages/auth/src/index.ts
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
-import { db } from "@repo/database";
+import { db } from "@gate/database";
 
 export const auth = betterAuth({
   database: drizzleAdapter(db, {
