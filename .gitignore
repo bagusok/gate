@@ -1,0 +1,28 @@
+# deps
+node_modules/
+
+# env files
+.env
+.env.local
+.env.prod
+.env.production
+
+# build outputs
+dist/
+.next/
+.turbo/
+
+# misc
+.DS_Store
+*.log
+*.tsbuildinfo
+
+# lock files (keep bun.lock)
+package-lock.json
+
+# IDE
+.vscode/
+.idea/
+
+# Drizzle
+drizzle/
