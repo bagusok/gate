@@ -86,6 +86,12 @@ module.exports = {
 			max_memory_restart: "500M",
 
 			/**
+			 * Load environment variables from .env file
+			 * ❗ MUST point to the root .env file
+			 */
+			env_file: "/var/www/myapp/.env",
+
+			/**
 			 * Environment variables for development
 			 * Used when --env production is NOT provided
 			 */
@@ -107,10 +113,22 @@ module.exports = {
 				NODE_ENV: "production",
 
 				/**
+				 * Bind to localhost only for security
+				 * Only accessible via reverse proxy
+				 */
+				HOST: "127.0.0.1",
+
+				/**
 				 * Application port (production)
 				 * CHANGE to match your reverse proxy / firewall
 				 */
 				PORT: 9995,
+
+				/**
+				 * CORS allowed origins
+				 * Comma-separated list of allowed domains
+				 */
+				ALLOWED_ORIGINS: "https://gate.miramine.my.id,https://www.gate.miramine.my.id",
 			},
 
 			/**
@@ -152,7 +170,7 @@ module.exports = {
 			 * Start command
 			 * Runs: `bun run start`
 			 */
-			args: "run start",
+			args: "run start -- --hostname 127.0.0.1",
 
 			/**
 			 * Working directory of the frontend app
@@ -182,6 +200,12 @@ module.exports = {
 			max_memory_restart: "1G",
 
 			/**
+			 * Load environment variables from .env file
+			 * ❗ MUST point to the root .env file
+			 */
+			env_file: "/var/www/myapp/.env",
+
+			/**
 			 * Development environment variables
 			 */
 			env: {
@@ -199,6 +223,12 @@ module.exports = {
 			 */
 			env_production: {
 				NODE_ENV: "production",
+
+				/**
+				 * Bind to localhost only for security
+				 * Only accessible via reverse proxy
+				 */
+				HOSTNAME: "127.0.0.1",
 
 				/**
 				 * Production port

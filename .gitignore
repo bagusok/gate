@@ -26,3 +26,5 @@ package-lock.json
 
 # Drizzle
 drizzle/
+
+ecosystem.prod.config.js

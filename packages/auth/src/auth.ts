@@ -1,4 +1,4 @@
-import { db, schema, UserRole } from "@gate/database";
+import { db, schema, UserRole } from "@repo/database";
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 

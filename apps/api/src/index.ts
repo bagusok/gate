@@ -1,9 +1,23 @@
 import { Hono } from "hono";
+import { cors } from "hono/cors";
 import { startLogRetentionJob } from "./jobs/log-retention";
 import { proxyRoutes } from "./routes/proxy";
 import { usageRoutes } from "./routes/usage";
+import "dotenv/config";
 
 const app = new Hono();
+
+// CORS configuration
+app.use(
+	"*",
+	cors({
+		origin: process.env.ALLOWED_ORIGINS?.split(",") || "*",
+		allowMethods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+		allowHeaders: ["Content-Type", "Authorization"],
+		maxAge: 86400,
+		credentials: true,
+	})
+);
 
 app.get("/", (c) => {
 	return c.json({
@@ -70,9 +84,14 @@ process.on("SIGINT", async () => {
 	process.exit(0);
 });
 
-console.log("API Gateway running on port 9990 with dynamic service routing");
+
+const port = process.env.PUBLIC_API_PORT || 9990;
+const hostname = process.env.HOST || "127.0.0.1";
+
+console.log(`API Gateway running on ${hostname}:${port} with dynamic service routing`);
 
 export default {
-	port: 9990,
+	port: Number(port),
+	hostname,
 	fetch: app.fetch,
 };
