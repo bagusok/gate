@@ -5,6 +5,7 @@ import { authRoutes } from "./routes/auth";
 import { dashboardRoutes } from "./routes/dashboard";
 import { publicRoutes } from "./routes/public";
 import { userRoutes } from "./routes/user";
+import "dotenv/config";
 
 const app = new Hono().basePath("/api");
 
@@ -13,12 +14,12 @@ app.use(
 	"*",
 	cors({
 		origin: process.env.ALLOWED_ORIGINS?.split(",") || "*",
-		allowHeaders: ["Content-Type", "Authorization", 'User-Agent'],
-	allowMethods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+		allowHeaders: ["Content-Type", "Authorization", "User-Agent"],
+		allowMethods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
 		exposeHeaders: ["Content-Length"],
 		maxAge: 600,
 		credentials: true,
-	}),
+	})
 );
 
 const routes = app
