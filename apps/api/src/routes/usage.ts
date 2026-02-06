@@ -52,6 +52,7 @@ usage.get("/usage", async (c) => {
 				name: plan.name,
 				limit: limit,
 				interval: interval,
+				expiredAt: userData.planExpiresAt,
 			},
 			usage: {
 				used: currentUsage,
